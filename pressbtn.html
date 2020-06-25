@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make LEDs blink!</title>
+</head>
+<body>
+    <button onclick="makeBlink()">Blink LED</button>
+    <button onclick="stopBlink()">Stop LED</button>
+</body>
+
+<script>
+    function makeBlink(){
+        const url = 'http://localhost:3000/blink';
+        fetch(url)
+        .then(console.log("The LED connected to your Arduino is blinking!"))
+    }
+    function stopBlink(){
+        const url = 'http://localhost:3000/stopblink';
+        fetch(url)
+        .then(console.log("The LED connected to your Arduino has stopped blinking!"))
+    }
+</script>
+</html>
